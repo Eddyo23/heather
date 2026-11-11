@@ -28,6 +28,7 @@
         <a href="#about">About</a>
         <a href="#lessons">Lessons</a>
         <a href="#approach">Approach</a>
+        <a href="#payments">Payments</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="#contact">Book a first lesson</a>
       </nav>
@@ -133,14 +134,6 @@
       </div>
     </section>
 
-    <section class="testimonial section" aria-label="Student testimonial">
-      <div class="shell quote-wrap reveal">
-        <div class="quote-mark" aria-hidden="true">“</div>
-        <blockquote>Heather has a gift for meeting students exactly where they are. Lessons are the highlight of our week, and the confidence we’ve watched grow goes far beyond the piano.</blockquote>
-        <p>— Parent of a piano student</p>
-      </div>
-    </section>
-
     <section class="details section">
       <div class="shell">
         <div class="center-heading reveal">
@@ -152,6 +145,39 @@
           <div class="step reveal"><span>2</span><h3>Meet &amp; play</h3><p>We’ll get acquainted, make some music, and find the lesson length that fits.</p></div>
           <div class="step reveal"><span>3</span><h3>Grow together</h3><p>Leave each lesson with a clear plan, fresh inspiration, and something to celebrate.</p></div>
         </div>
+      </div>
+    </section>
+
+    <section class="payments section" id="payments">
+      <div class="shell payment-grid">
+        <div class="payment-copy reveal">
+          <p class="eyebrow">Studio payments</p>
+          <h2>Pay for lessons<br><em>securely online.</em></h2>
+          <p>Current students can use this form to make a lesson or tuition payment. You’ll finish checkout on PayPal’s secure website.</p>
+          <div class="payment-trust">
+            <span class="payment-lock" aria-hidden="true">✓</span>
+            <p><strong>Secure PayPal checkout</strong>Heather Eddy Music Studio does not receive or store your card information.</p>
+          </div>
+        </div>
+        <form class="payment-form reveal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="heather.eddy.music@gmail.com">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="item_name" value="Heather Eddy Music Studio lesson payment">
+          <input type="hidden" name="no_shipping" value="1">
+          <div class="payment-form-heading">
+            <span class="paypal-wordmark">Pay<span>Pal</span></span>
+            <p>Lesson payment</p>
+          </div>
+          <label>Student name
+            <input name="custom" type="text" autocomplete="name" required placeholder="Who is this payment for?">
+          </label>
+          <label>Payment amount
+            <span class="amount-field"><span aria-hidden="true">$</span><input name="amount" type="number" min="1" step="0.01" inputmode="decimal" required placeholder="0.00" aria-label="Payment amount in US dollars"></span>
+          </label>
+          <button class="paypal-button" type="submit">Continue to PayPal <span aria-hidden="true">→</span></button>
+          <p class="payment-fine-print">Payments are processed in U.S. dollars. A PayPal account is not always required; available payment methods are shown by PayPal at checkout.</p>
+        </form>
       </div>
     </section>
 
@@ -219,7 +245,7 @@
     <div class="shell footer-main">
       <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">HE</span><span><strong>Heather Eddy</strong><small>Music Studio</small></span></a>
       <p>Thoughtful instruction.<br>Lifelong musicianship.</p>
-      <nav aria-label="Footer navigation"><a href="#about">About</a><a href="#lessons">Lessons</a><a href="#approach">Approach</a><a href="#contact">Contact</a></nav>
+      <nav aria-label="Footer navigation"><a href="#about">About</a><a href="#lessons">Lessons</a><a href="#payments">Payments</a><a href="#contact">Contact</a></nav>
     </div>
     <div class="shell footer-bottom"><p>© <span id="year"></span> Heather Eddy Music Studio</p><a href="#top">Back to top ↑</a></div>
   </footer>
