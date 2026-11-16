@@ -41,12 +41,11 @@
 
   function availableTimes(date) {
     var day = date.getDay();
-    if (day === 0 || day === 6) return [];
-    var start = 7 * 60;
-    if (day === 3 || day === 4) start = 16 * 60;
-    if (day === 5) start = 15 * 60;
+    if (day === 0 || day >= 5) return [];
+    var start = day === 1 || day === 2 ? 10 * 60 : 16 * 60;
+    var lastStart = day === 1 || day === 2 ? 16 * 60 + 30 : 18 * 60 + 30;
     var times = [];
-    for (var minutes = start; minutes <= 18 * 60 + 30; minutes += 30) times.push(formatTime(minutes));
+    for (var minutes = start; minutes <= lastStart; minutes += 30) times.push(formatTime(minutes));
     return times;
   }
 
@@ -57,7 +56,7 @@
     }
     var dateText = selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
     var subject = 'Lesson time request — ' + dateText + ' at ' + selectedTime;
-    var body = 'Hi Heather,\n\nI would like to request a lesson on ' + dateText + ' at ' + selectedTime + '.\n\nStudent name:\nLesson type: Voice / Beginner piano / Kinder music\n\nThank you!';
+    var body = 'Hi Heather,\n\nI would like to request a lesson on ' + dateText + ' at ' + selectedTime + '.\n\nStudent name:\nLesson type: Voice / Beginner piano / Tune Tots\n\nThank you!';
     bookingEmail.href = 'mailto:heather.eddy.music@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     bookingEmail.classList.add('is-ready');
   }
@@ -101,7 +100,7 @@
     for (var day = 1; day <= daysInMonth; day++) {
       (function () {
         var date = new Date(viewDate.getFullYear(), viewDate.getMonth(), day);
-        var weekend = date.getDay() === 0 || date.getDay() === 6;
+        var unavailable = availableTimes(date).length === 0;
         var past = date < today;
         var button = document.createElement('button');
         button.type = 'button';
@@ -111,7 +110,7 @@
         button.setAttribute('aria-label', date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }));
         if (sameDay(date, today)) button.classList.add('is-today');
         if (sameDay(date, selectedDate)) button.classList.add('is-selected');
-        if (weekend || past) {
+        if (unavailable || past) {
           button.disabled = true;
           button.classList.add('is-disabled');
           button.setAttribute('aria-label', button.getAttribute('aria-label') + ', unavailable');

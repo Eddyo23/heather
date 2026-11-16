@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <circle cx="32" cy="32" r="29" fill="#173f37"/>
   <circle cx="32" cy="32" r="24.5" fill="none" stroke="#f6f0e5" stroke-width="1.5"/>
-  <text x="32" y="38" fill="#f6f0e5" font-family="Georgia, 'Times New Roman', serif" font-size="19" text-anchor="middle" letter-spacing="1">HE</text>
+  <text x="32" y="46" fill="#f6f0e5" font-family="Apple Symbols, Noto Music, Segoe UI Symbol, serif" font-size="42" text-anchor="middle" letter-spacing="1">𝄞</text>
 </svg>
